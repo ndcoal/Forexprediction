@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Prediction API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77a0a0 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        #showcase {
+            min-height: 400px;
+            background: #77a0a0;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        #showcase p {
+            font-size: 20px;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Forex Prediction API</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="showcase">
+        <div class="container">
+            <h1>Welcome to the Forex Prediction API</h1>
+            <p>This API predicts EUR/USD forex prices using machine learning models.</p>
+        </div>
+    </section>
+    <section class="content container">
+        <h2>API Endpoints</h2>
+        <p><strong>/predict</strong> - POST - Predicts the EUR/USD forex prices based on the input data.</p>
+        <h2>Usage</h2>
+        <p>Send a POST request to the <strong>/predict</strong> endpoint with the following JSON format:</p>
+        <pre>
+        [
+            {
+                "Ticker": "EURUSD",
+                "Date": 20240527,
+                "Time": 150000,
+                "Open": 1.0740,
+                "High": 1.0750,
+                "Low": 1.0730,
+                "Close": 1.0745,
+                "Volume": 1000
+            },
+            ...
+        ]
+        </pre>
+        <p>The API will return a JSON response with the predicted prices.</p>
+    </section>
+</body>
+</html>
