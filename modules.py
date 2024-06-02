@@ -6,6 +6,7 @@ Created on Sun Jun  2 15:10:00 2024
 """
 
 import joblib
+import pandas as pd
 import pandas_ta as ta
 from datetime import datetime
 from sklearn.decomposition import PCA
