@@ -14,7 +14,6 @@ from sklearn.preprocessing import StandardScaler
 
 # Load the trained models and scaler
 lin_reg = joblib.load('linear_regression_model1.pkl')
-rf_reg = joblib.load('random_forest_regression_model1.pkl')
 scaler = joblib.load('scaler.pkl')
 pca = joblib.load('pca.pkl')
 
@@ -74,8 +73,4 @@ def forecast_price(new_data):
     
     # Predict using linear regression model
     y_pred_lin = lin_reg.predict(X_new_pca)
-    
-    # Predict using random forest regression model
-    y_pred_rf = rf_reg.predict(X_new_pca)
-    
-    return y_pred_lin, y_pred_rf
+    return y_pred_lin
