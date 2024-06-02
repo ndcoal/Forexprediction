@@ -6,12 +6,15 @@ Created on Sun Jun  2 13:45:03 2024
 """
 import pandas as pd
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import modules
 
 app = Flask(__name__)
 
-
+@app.route('/')
+def home():
+    return render_template('index.html')
+    
 @app.route('/predict', methods=['POST'])
 def predict():
     user_input = request.json
