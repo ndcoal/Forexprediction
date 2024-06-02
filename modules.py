@@ -4,9 +4,8 @@ Created on Sun Jun  2 15:10:00 2024
 
 @author: Ndubisi M. Uzoegbu
 """
-
-import joblib
 import pandas as pd
+import joblib
 import pandas_ta as ta
 from datetime import datetime
 from sklearn.decomposition import PCA
@@ -60,7 +59,7 @@ def preprocess_new_data(new_data):
     new_data = new_data.drop(columns=['Date', 'Time', 'Ticker', 'Open', 'High', 'Low'])
     
     new_data = add_technical_indicators(new_data, 'Close')
-    new_data = add_lagged_features(new_data, 'Close', 60)
+    new_data = add_lagged_features(new_data, 'Close', 30)
     
     new_data = new_data.dropna()
     
@@ -75,4 +74,5 @@ def forecast_price(new_data):
     
     # Predict using linear regression model
     y_pred_lin = lin_reg.predict(X_new_pca)
+    
     return y_pred_lin
