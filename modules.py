@@ -31,8 +31,10 @@ def add_technical_indicators(df, column):
 
 # Function to add lagged features to the new input data
 def add_lagged_features(df, column, num_lags):
-    for lag in range(30, num_lags + 1):
-        df[f'{column}_lag{lag}'] = df[column].shift(lag)
+    lag_c = 29
+    for lag in range(0, num_lags + 1):
+        lag_c = lag_c + 1
+        df[f'{column}_lag{lag_c}'] = df[column].shift(lag)
     return df
 
 # Function to preprocess new data
