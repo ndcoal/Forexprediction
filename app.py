@@ -4,7 +4,7 @@ Created on Sun Jun  2 13:45:03 2024
 
 @author: Ndubisi M. Uzoegbu
 """
-
+import pandas as pd
 from flask import Flask, request, jsonify
 import modules
 
@@ -16,7 +16,7 @@ def predict():
     user_input = request.json
     user_input_df = pd.DataFrame(user_input)
     # Forecast price
-    lin_pred = forecast_price(user_input_df)
+    lin_pred = modules.forecast_price(user_input_df)
     numblen = len(lin_pred)
     # Create prediction results
     pr_results = {
