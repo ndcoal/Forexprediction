@@ -5,7 +5,6 @@ Created on Sun Jun  2 13:45:03 2024
 @author: Ndubisi M. Uzoegbu
 """
 import pandas as pd
-import json
 from flask import Flask, request, jsonify, render_template
 import modules
 
